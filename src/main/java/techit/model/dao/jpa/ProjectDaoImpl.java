@@ -17,7 +17,7 @@ public class ProjectDaoImpl implements ProjectDao {
 	@Override
 	public List<Project> getAllProjects() {
 		// TODO Auto-generated method stub
-		return entityManager.createQuery( "from User order by id", Project.class )
+		return entityManager.createQuery( "from Project order by id", Project.class )
 	            .getResultList();
 		
 	}

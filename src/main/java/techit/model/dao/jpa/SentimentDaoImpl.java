@@ -18,7 +18,7 @@ public class SentimentDaoImpl implements SentimentDao{
 	public List<Sentiment> getAllSentiment() {
 		
 		// TODO Auto-generated method stub
-		return entityManager.createQuery( "from User order by id", Sentiment.class )
+		return entityManager.createQuery( "from Sentiment order by id", Sentiment.class )
 	            .getResultList();
 		
 	}
