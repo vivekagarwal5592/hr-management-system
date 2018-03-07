@@ -4,6 +4,7 @@ package techit.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
@@ -13,9 +14,13 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import techit.model.helper.UserRole;
 
@@ -46,6 +51,12 @@ public abstract class User implements Serializable {
    private String email;
    @Column(name = "user_role_id", insertable = false, updatable = false)
    private Integer userRoleId; // default to low privilege user role
+   
+   @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL })
+	@JoinTable(name = "project_user", joinColumns = { @JoinColumn(name = "projectid") }, inverseJoinColumns = {
+			@JoinColumn(name = "userid") })
+	@JsonIgnore
+   private List<Project> projects;
   
    
    /**

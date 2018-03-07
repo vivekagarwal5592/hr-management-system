@@ -6,7 +6,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * Entity implementation class for Entity: Supervisor
+ * Entity implementation class for Entity: Employee
  */
 @Entity
 @DiscriminatorValue("2")
