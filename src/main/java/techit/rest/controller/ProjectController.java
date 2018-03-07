@@ -10,31 +10,29 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import techit.model.User;
-import techit.model.dao.UserDao;
 import techit.rest.error.RestException;
 
+
+
 @RestController
-public class UserController {
+public class ProjectController {
 
-	@Autowired
-	private UserDao userDao;
-
+/*	@Autowired
+	private SentimentDao sentimentDao;
+	
+	
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
-	public User getUser(@PathVariable int id) {
-		return userDao.getUser(id);
+	public User getSentiment(@PathVariable int id) {
+		return sentimentDao.getSentiment(id);
 	}
 
 	@RequestMapping(value = "/user/", method = RequestMethod.GET)
-	public List<User> getUsers() {
-		return userDao.getUsers();
-	}
+	public List<Sentiment> getUsers() {
+		return sentimentDao.getSentiments();
+	}*/
 
-	@RequestMapping(value = "/user/", method = RequestMethod.POST)
-	public User addUser(@RequestBody User user) {
-		if (user.getUsername() == null || user.getPassword() == null)
-			throw new RestException(400, "Missing username and/or password.");
-
-		return userDao.saveUser(user);
-	}
-
+	
+	
+	
+	
 }
