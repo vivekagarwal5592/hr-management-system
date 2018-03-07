@@ -63,5 +63,14 @@ public class Sentiment implements Serializable{
 	public void setSchedule(int schedule) {
 		this.schedule = schedule;
 	}
+	public Project getProjectDetails() {
+		return projectDetails;
+	}
+	
+	public void setProjectDetails(Project projectDetails) {
+		this.projectDetails = projectDetails;
+	}
+	
+	
 	
 }

@@ -73,4 +73,14 @@ public class Project {
 		this.employees = employees;
 	}
 
+	public List<Sentiment> getSentiments() {
+		return sentiments;
+	}
+
+	public void setSentiments(List<Sentiment> sentiments) {
+		this.sentiments = sentiments;
+	}
+	
+	
+
 }
