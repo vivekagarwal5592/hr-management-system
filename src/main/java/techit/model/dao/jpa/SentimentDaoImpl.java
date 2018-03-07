@@ -28,4 +28,9 @@ public class SentimentDaoImpl implements SentimentDao{
 		// TODO Auto-generated method stub
 		return entityManager.find(Sentiment.class, id);
 }
+
+	@Override
+	public Sentiment saveSentiment(Sentiment sentiment) {
+		return entityManager.merge(sentiment);
+	}
 }

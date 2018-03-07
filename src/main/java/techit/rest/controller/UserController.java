@@ -29,12 +29,14 @@ public class UserController {
 		return userDao.getUsers();
 	}
 
-	@RequestMapping(value = "/user/", method = RequestMethod.POST)
+	@RequestMapping(value = "/login/", method = RequestMethod.POST)
 	public User addUser(@RequestBody User user) {
 		if (user.getUsername() == null || user.getPassword() == null)
 			throw new RestException(400, "Missing username and/or password.");
 
 		return userDao.saveUser(user);
 	}
+	
+	
 
 }
