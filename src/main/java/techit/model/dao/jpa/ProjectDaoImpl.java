@@ -25,8 +25,8 @@ public class ProjectDaoImpl implements ProjectDao {
 	@Override
 	public Project getProjectById(int id) {
 		// TODO Auto-generated method stub
-		entityManager.find(User.class, id);
-		return null;
+		return entityManager.find(Project.class, id);
+
 	}
 
 }
