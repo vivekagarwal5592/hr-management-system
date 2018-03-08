@@ -32,10 +32,8 @@ public class SentimentDaoImpl implements SentimentDao{
 }
 
 	@Override
-	public void saveSentiment(Sentiment sentiment) {
-		// TODO Auto-generated method stub
-		entityManager.merge(sentiment);
-		
-		
+	public Sentiment saveSentiment(Sentiment sentiment) {
+		return entityManager.merge(sentiment);
+
 	}
 }

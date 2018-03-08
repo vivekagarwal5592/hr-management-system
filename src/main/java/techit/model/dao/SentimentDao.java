@@ -14,8 +14,9 @@ public interface SentimentDao {
 		// Get a project by id
 		Sentiment getSentimentById(int id);
 		
-		//Save sentiment
-		void saveSentiment(Sentiment sentiment);
+
+		Sentiment saveSentiment(Sentiment sentiment);
+
 		
 		
 		
