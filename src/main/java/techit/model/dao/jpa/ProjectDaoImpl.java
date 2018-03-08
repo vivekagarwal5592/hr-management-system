@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import techit.model.Project;
 import techit.model.User;
@@ -15,9 +16,10 @@ public class ProjectDaoImpl implements ProjectDao {
 	   private EntityManager entityManager;
 	
 	@Override
+	@Transactional
 	public List<Project> getAllProjects() {
 		// TODO Auto-generated method stub
-		return entityManager.createQuery( "from User order by id", Project.class )
+		return entityManager.createQuery( "from Project order by id", Project.class )
 	            .getResultList();
 		
 	}

@@ -43,6 +43,8 @@ public class UserDaoImpl implements UserDao {
       }
    }
    
+   
+   
    @Override
    @SuppressWarnings("unchecked")
    public <T extends User> T getUserByLogin(String login) {
@@ -84,4 +86,8 @@ public class UserDaoImpl implements UserDao {
    public <T extends User> T saveUser(T user) {
       return entityManager.merge(user);
    }
+
+
+
+
 }

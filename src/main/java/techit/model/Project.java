@@ -28,6 +28,7 @@ public class Project {
 	String name;
 
 	 @OneToOne(fetch = FetchType.LAZY)
+	 @JsonIgnore
 	 @JoinColumn(name = "supervisor_id", referencedColumnName = "id")
 	private User supervisor; // modifier user
 

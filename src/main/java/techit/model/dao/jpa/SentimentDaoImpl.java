@@ -18,7 +18,7 @@ public class SentimentDaoImpl implements SentimentDao{
 	public List<Sentiment> getAllSentiment() {
 		
 		// TODO Auto-generated method stub
-		return entityManager.createQuery( "from User order by id", Sentiment.class )
+		return entityManager.createQuery( "from Sentiment order by id", Sentiment.class )
 	            .getResultList();
 		
 	}
@@ -27,5 +27,15 @@ public class SentimentDaoImpl implements SentimentDao{
 	public Sentiment getSentimentById(int id) {
 		// TODO Auto-generated method stub
 		return entityManager.find(Sentiment.class, id);
+		
+	
 }
+
+	@Override
+	public void saveSentiment(Sentiment sentiment) {
+		// TODO Auto-generated method stub
+		entityManager.merge(sentiment);
+		
+		
+	}
 }

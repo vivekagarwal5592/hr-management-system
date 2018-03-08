@@ -3,6 +3,7 @@ package techit.model;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -22,7 +23,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import techit.model.helper.UserRole;
+
 
 @Entity
 @Table(name = "users")
@@ -56,7 +57,7 @@ public abstract class User implements Serializable {
 	@JoinTable(name = "project_user", joinColumns = { @JoinColumn(name = "projectid") }, inverseJoinColumns = {
 			@JoinColumn(name = "userid") })
 	@JsonIgnore
-	private List<Project> projects;
+	private Set<Project> projects;
 
 	/**
 	 * Returns the value of id
@@ -215,7 +216,7 @@ public abstract class User implements Serializable {
 	 * 
 	 * @return the userRole
 	 */
-	public UserRole getUserRole() {
+	/*public UserRole getUserRole() {
 		return userRoleId != null ? UserRole.valueOf(userRoleId) : null;
 	}
 
@@ -225,11 +226,11 @@ public abstract class User implements Serializable {
 	 * @param userRole
 	 *            the userRole to set
 	 */
-	public void setUserRole(UserRole userRole) {
+	/*public void setUserRole(UserRole userRole) {
 		if (userRole != null) {
 			this.userRoleId = userRole.getValue();
 		}
-	}
+	}*/
 
 	public Integer getUserRoleId() {
 		return userRoleId;
@@ -239,11 +240,11 @@ public abstract class User implements Serializable {
 		this.userRoleId = userRoleId;
 	}
 
-	public List<Project> getProjects() {
+	public Set<Project> getProjects() {
 		return projects;
 	}
 
-	public void setProjects(List<Project> projects) {
+	public void setProjects(Set<Project> projects) {
 		this.projects = projects;
 	}
 

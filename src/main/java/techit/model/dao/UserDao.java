@@ -2,7 +2,7 @@ package techit.model.dao;
 
 import java.util.List;
 
-
+import techit.model.Project;
 import techit.model.Supervisor;
 import techit.model.User;
 
@@ -56,4 +56,5 @@ public interface UserDao {
     * @return
     */
    <T extends User> T saveUser(T user);
+
 }
